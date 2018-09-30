@@ -13,6 +13,7 @@ gemfile:
   - Gemfile
   - gemfiles/rails_4.1.gemfile
   - gemfiles/rails_4.2.gemfile
+  - gemfiles/rails_5.2.gemfile
 
 before_install:
   - wget -O vault.zip -q https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip
@@ -37,6 +38,8 @@ matrix:
       gemfile: gemfiles/rails_4.1.gemfile
     - rvm: 2.4.2
       gemfile: gemfiles/rails_4.2.gemfile
+    - rvm: 2.4.2
+      gemfile: gemfiles/rails_5.2.gemfile
 
 before_script:
   - bundle exec rake app:db:create
